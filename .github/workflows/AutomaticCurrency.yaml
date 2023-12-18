@@ -26,13 +26,13 @@ jobs:
     - name: Run script to call API and parse JSON
       run: node ./scripts/api_call_and_parse.js
 
-    - name: Create and Commit Files
+    - name: Create and Commit & Push Files
       run: |
         git config --local user.email "a01075511157@gmail.com"
         git config --local user.name "ChoSeyoung"
         git add .
         git commit -m "Add API response JSON" -a || echo "No changes to commit"
-        gir push -u origin main
+        git push -u origin main
     
     - name: Push to GitHub
       uses: ad-m/github-push-action@v0.6.0
