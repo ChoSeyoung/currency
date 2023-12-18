@@ -10,7 +10,7 @@ function getFormattedDate() {
     return `${year}${month}${day}`;
 }
 
-axios.get('https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=HP7TlTr7wuBKvw14uHQpZ1MjaPGKk0ka&data=AP01')
+axios.get(`https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=${process.env.AUTH_KEY}&data=AP01`)
   .then(response => {
     const data = response.data;
     const filename = `${getFormattedDate()}.json`;  // 파일명에 날짜 포함
