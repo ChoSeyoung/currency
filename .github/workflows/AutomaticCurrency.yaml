@@ -26,6 +26,13 @@ jobs:
     - name: Run script to call API and parse JSON
       run: node ./scripts/api_call_and_parse.js
 
+    - name: repository checkout
+      uses: actions/checkout@v2
+      with:
+        repository: ChoSeyoung/currency
+        token: ${{ secrets.MY_GITHUB_TOKEN }}
+        path: currency
+          
     - name: Create and Commit & Push Files
       run: |
         git config --local user.email "a01075511157@gmail.com"
