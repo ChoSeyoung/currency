@@ -14,7 +14,7 @@ axios.get('https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authk
   .then(response => {
     const data = response.data;
     const filename = `${getFormattedDate()}.json`;  // 파일명에 날짜 포함
-    fs.writeFileSync(filename, data);
+    fs.writeFileSync(filename, JSON.stringify(data, null, 2));
   })
   .catch(error => {
     console.error('API 호출 실패:', error);
