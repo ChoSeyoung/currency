@@ -2,7 +2,7 @@ name: Get currency and store
 
 on:
   schedule:
-    - cron: '1 * * * *'
+    - cron: '1 2 * * *'
   workflow_dispatch:
 jobs:
   call-api-and-parse-json:
