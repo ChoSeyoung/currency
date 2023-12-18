@@ -13,8 +13,8 @@ function getFormattedDate() {
 axios.get('https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=HP7TlTr7wuBKvw14uHQpZ1MjaPGKk0ka&data=AP01')
   .then(response => {
     const data = response.data;
-    const filename = `data-${getFormattedDate()}.json`;  // 파일명에 날짜 포함
-    fs.writeFileSync(filename, JSON.stringify(data, null, 2));
+    const filename = `${getFormattedDate()}.json`;  // 파일명에 날짜 포함
+    fs.writeFileSync(filename, data);
   })
   .catch(error => {
     console.error('API 호출 실패:', error);
