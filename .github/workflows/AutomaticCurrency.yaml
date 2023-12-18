@@ -32,6 +32,7 @@ jobs:
         git config --local user.name "ChoSeyoung"
         git add .
         git commit -m "Add API response JSON" -a || echo "No changes to commit"
+        gir push -u origin main
     
     - name: Push to GitHub
       uses: ad-m/github-push-action@v0.6.0
