@@ -1,6 +1,9 @@
 # macOS system files
 .DS_Store
 
+# just ignore
+package-lock.json
+
 # Logs
 logs
 *.log
